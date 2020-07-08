@@ -1,2 +1,30 @@
 # pattern-recognition
 模式识别 对Nemo鱼进行分割
+#
+309.bmp为Nemo鱼的图像
+#
+ array_sample.mat是用于训练的matlab格式的样本数据，其中每一行代表一个样本信息，第1列为其灰度值，第2-4列分别对应r,g,b颜色值，最后一列代表label信息，其中1代表属于第一类，-1代表属于第二类
+#
+Mask.mat为一个二值图像，通过源图像与该图像的点乘运算即可得到需要分割的目标，即nemo鱼的部分。
+#
+Nemo1_norm.m文件为灰度处理，利用参数估计分离Nemo鱼
+#
+Nemo1_threshold.m文件为阈值分割对Nemo鱼进行灰度处理完成分割
+#
+Nemo2_norm.m文件为RGB三通道处理，利用参数估计分割
+#
+Nemo_hist.m文件为利用直方图估计法分割
+#
+Nemo_KDE1_fun.m文件为灰度处理后，使用MATLAB的自带函数ksdensity进行核密度估计
+#
+Nemo_KDE1_model.m文件为灰度处理后，使用MATLAB工具箱训练得到的模型进行预测
+#
+Nemo_KDE2_fun.m文件为RGB三通道处理，使用MATLAB的自带函数ksdensity进行核密度估计
+#
+Nemo_KDE2_model.m文件为RGB三通道处理，使用MATLAB工具箱训练得到的模型进行预测
+#
+Nemo_KDE2_parzen.m文件为使用parzen窗函数对Nemo鱼进行分离
+#
+Nemo_KNN1_fun.m文件为灰度处理后，使用自带函数进行KNN估计
+#
+Nemo_KNN_model.m文件为RGB三通道处理，使用工具箱训练后进行KNN预测
